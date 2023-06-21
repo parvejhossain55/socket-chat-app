@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket Practice</title>
+  </head>
+  <body>
+    <h3>Socket Practice</h3>
+    <span id="msg"></span>
+
+    <!-- <input type="text" id="name" />
+    <button type="submit" onclick="send()">Send</button> -->
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      let socket = io("/sell");
+
+      socket.on("sellEvent", (data) => {
+        document.getElementById("msg").innerHTML = data;
+      });
+    </script>
+  </body>
+</html>
